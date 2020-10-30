@@ -458,7 +458,6 @@ C_BasePlayer::~C_BasePlayer()
 	delete m_pFlashlight;
 }
 
-
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
@@ -685,7 +684,6 @@ void C_BasePlayer::SetViewAngles( const QAngle& ang )
 	SetLocalAngles( ang );
 	SetNetworkAngles( ang );
 }
-
 
 surfacedata_t* C_BasePlayer::GetGroundSurface()
 {

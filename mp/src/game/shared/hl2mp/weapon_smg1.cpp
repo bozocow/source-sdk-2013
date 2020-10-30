@@ -179,12 +179,21 @@ void CWeaponSMG1::AddViewKick( void )
 	#define	SLIDE_LIMIT			2.0f	//Seconds
 	
 	//Get the view kick
-	CBasePlayer *pPlayer = ToBasePlayer( GetOwner() );
+	CBasePlayer *pPlayer = ToBasePlayer(GetOwner());
 
-	if ( pPlayer == NULL )
+	if (pPlayer == NULL) {
 		return;
+	}
 
-	DoMachineGunKick( pPlayer, EASY_DAMPEN, MAX_VERTICAL_KICK, m_fFireDuration, SLIDE_LIMIT );
+	//QAngle angles(pPlayer->GetLocalAngles());
+	//pPlayer->ResetAngleVelocity(angles);
+
+	QAngle angles;
+	angles.x = -MAX_VERTICAL_KICK;
+	angles.y = 0;
+	angles.z = 0;
+
+	pPlayer->ViewPunch(angles);
 }
 
 //-----------------------------------------------------------------------------

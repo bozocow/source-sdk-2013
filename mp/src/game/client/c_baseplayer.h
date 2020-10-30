@@ -163,6 +163,12 @@ public:
 	virtual const QAngle &EyeAngles();		// Direction of eyes
 	void				 EyePositionAndVectors( Vector *pPosition, Vector *pForward, Vector *pRight, Vector *pUp );
 	virtual const QAngle &LocalEyeAngles();		// Direction of eyes
+
+	// Used by weapons during recoil
+	//void ResetAngleVelocity(const QAngle &viewAngles) {
+	//	pl.v_angle = viewAngles;
+	//	pl.fixangle = FIXANGLE_ABSOLUTE;
+	//}
 	
 	// This can be overridden to return something other than m_pRagdoll if the mod uses separate 
 	// entities for ragdolls.
